@@ -7,6 +7,10 @@ endif()
 # In all cases:
 string(TOLOWER ${ZLIB_NAMESPACE} ZLIB_LIBRARY_NAME)
 
+if( POLICY CMP0048 )
+  cmake_policy(SET CMP0048 NEW)
+endif()
+
 project(${ZLIB_NAMESPACE} C)
 
 # Do full dependency headers.
@@ -40,8 +44,8 @@ if(WIN32)
         if(NOT MINGW)
           set(ZLIB_SRCS ${ZLIB_SRCS} zlib.def zlib.rc  )
         endif()
-      endif() 
-    endif()   
+      endif()
+    endif()
   endif()
 endif()
 

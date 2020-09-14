@@ -7,6 +7,10 @@ endif()
 # In all cases:
 string(TOLOWER ${UUID_NAMESPACE} UUID_LIBRARY_NAME)
 
+if( POLICY CMP0048 )
+  cmake_policy(SET CMP0048 NEW)
+endif()
+
 project(${UUID_NAMESPACE} C)
 
 foreach(p

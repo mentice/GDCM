@@ -33,6 +33,10 @@ endif()
 #string(TOLOWER ${OPENJPEG_NAMESPACE} OPENJPEG_LIBRARY_NAME)
 set(OPENJPEG_LIBRARY_NAME gdcmopenjp2)
 
+if( POLICY CMP0048 )
+  cmake_policy(SET CMP0048 NEW)
+endif()
+
 project(${OPENJPEG_NAMESPACE} C)
 
 # Do full dependency headers.

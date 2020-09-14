@@ -7,6 +7,10 @@ endif()
 # In all cases:
 string(TOLOWER ${EXPAT_NAMESPACE} EXPAT_LIBRARY_NAME)
 
+if( POLICY CMP0048 )
+  cmake_policy(SET CMP0048 NEW)
+endif()
+
 project(${EXPAT_NAMESPACE} C)
 
 set(EXPAT_MAJOR_VERSION 2)

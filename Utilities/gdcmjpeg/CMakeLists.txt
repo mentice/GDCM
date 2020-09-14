@@ -12,6 +12,9 @@ endif()
 # In all cases:
 string(TOLOWER ${JPEG_NAMESPACE} JPEG_LIBRARY_NAME)
 
+if( POLICY CMP0048 )
+  cmake_policy(SET CMP0048 NEW)
+endif()
 
 project(${JPEG_NAMESPACE} C)
 

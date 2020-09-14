@@ -18,6 +18,10 @@ endif()
 # In all cases:
 string(TOLOWER ${SOCKETXX_NAMESPACE} SOCKETXX_LIBRARY_NAME)
 
+if( POLICY CMP0048 )
+  cmake_policy(SET CMP0048 NEW)
+endif()
+
 project(${SOCKETXX_NAMESPACE} CXX)
 
 if(NOT SOCKETXX_INSTALL_BIN_DIR)

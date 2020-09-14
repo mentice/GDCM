@@ -17,7 +17,17 @@ endif()
 if( POLICY CMP0074 )
   cmake_policy(SET CMP0074 NEW)
 endif()
-project(GDCM)
+if( POLICY CMP0048 )
+  cmake_policy(SET CMP0048 NEW)
+endif()
+
+set(GDCM_MAJOR_VERSION 2)
+set(GDCM_MINOR_VERSION 8)
+set(GDCM_BUILD_VERSION 9)
+set(GDCM_VERSION
+  "${GDCM_MAJOR_VERSION}.${GDCM_MINOR_VERSION}.${GDCM_BUILD_VERSION}")
+
+project(GDCM VERSION ${GDCM_VERSION})
 set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_EXTENSIONS OFF)
 mark_as_advanced(CMAKE_BACKWARDS_COMPATIBILITY CMAKE_BUILD_TYPE CMAKE_INSTALL_PREFIX)
@@ -41,11 +51,6 @@ set(GDCM_PACKAGE_CONTACT "GDCM Developers <gdcm-developers@lists.sourceforge.net
 # VTK source tree for "DELAYLOAD"
 
 #----------------------------------------------------------------------------
-set(GDCM_MAJOR_VERSION 2)
-set(GDCM_MINOR_VERSION 8)
-set(GDCM_BUILD_VERSION 9)
-set(GDCM_VERSION
-  "${GDCM_MAJOR_VERSION}.${GDCM_MINOR_VERSION}.${GDCM_BUILD_VERSION}")
 # let advanced user the option to define GDCM_API_VERSION:
 if(NOT DEFINED GDCM_API_VERSION)
   set(GDCM_API_VERSION "${GDCM_MAJOR_VERSION}.${GDCM_MINOR_VERSION}")
