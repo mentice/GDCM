@@ -97,6 +97,7 @@ set(DICT_SRCS
 
 add_library(gdcmDICT ${DICT_SRCS})
 target_link_libraries(gdcmDICT LINK_PRIVATE gdcmDSED gdcmIOD)
+target_include_directories(gdcmDICT PUBLIC ${PROJECT_SOURCE_DIR}/Source/DataDictionary/)
 set_target_properties(gdcmDICT PROPERTIES ${GDCM_LIBRARY_PROPERTIES})
 if(BUILD_SHARED_LIBS)
   #set_target_properties(gdcmDICT PROPERTIES INTERFACE_LINK_LIBRARIES "" LINK_INTERFACE_LIBRARIES "")

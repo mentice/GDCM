@@ -188,6 +188,11 @@ set(Common_SRCS ${Common_SRCS}
 endif()
 
 add_library(gdcmCommon ${Common_SRCS})
+target_include_directories(gdcmCommon
+  PUBLIC
+  ${PROJECT_SOURCE_DIR}/Source/Common/
+  ${GDCM_BINARY_DIR}/Source/Common    # To get gdcmConfigure.h
+)
 
 #target_link_libraries(gdcmCommon ${GDCM_ZLIB_LIBRARIES}) # ${GDCM_POLARSSL_LIBRARIES})
 if(GDCM_BUILD_TESTING)

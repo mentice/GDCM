@@ -85,6 +85,7 @@ if(NOT GDCM_USE_SYSTEM_ZLIB)
 endif()
 
 add_library(gdcmDSED ${DSED_SRCS} ${DSED3_SRCS})
+target_include_directories(gdcmDSED PUBLIC ${GDCM_SOURCE_DIR}/Source/DataStructureAndEncodingDefinition/)
 target_link_libraries(gdcmDSED LINK_PUBLIC gdcmCommon)
 # zlib stuff are actually included (template) so we need to link them here.
 target_link_libraries(gdcmDSED LINK_PRIVATE ${GDCM_ZLIB_LIBRARIES})

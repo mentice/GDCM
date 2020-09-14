@@ -194,6 +194,7 @@ target_link_libraries(gdcmMSFF LINK_PRIVATE ${GDCM_LJPEG_LIBRARIES} ${GDCM_OPENJ
 if(GDCM_USE_JPEGLS)
   target_link_libraries(gdcmMSFF LINK_PRIVATE ${GDCM_CHARLS_LIBRARIES})
 endif()
+target_include_directories(gdcmMSFF PUBLIC ${GDCM_SOURCE_DIR}/Source/MediaStorageAndFileFormat)
 
 if(CMAKE_COMPILER_IS_GNUCXX AND MINGW)
   # I am getting:
